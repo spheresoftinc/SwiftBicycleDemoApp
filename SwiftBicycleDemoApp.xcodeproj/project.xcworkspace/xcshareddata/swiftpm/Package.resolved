@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SwiftBicycle",
+        "repositoryURL": "/Users/lou/project/SwiftBicycle",
+        "state": {
+          "branch": "master",
+          "revision": "7340e1e939696d63b2b311928ee25f07a0d34ffe",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
