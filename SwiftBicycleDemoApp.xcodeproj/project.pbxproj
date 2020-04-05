@@ -13,8 +13,7 @@
 		9A73AD2724352EEF00CC8753 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A73AD2624352EEF00CC8753 /* Assets.xcassets */; };
 		9A73AD2A24352EEF00CC8753 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A73AD2924352EEF00CC8753 /* Preview Assets.xcassets */; };
 		9A73AD2D24352EEF00CC8753 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A73AD2B24352EEF00CC8753 /* LaunchScreen.storyboard */; };
-		9A73AD39243530E300CC8753 /* SwiftBicycle in Frameworks */ = {isa = PBXBuildFile; productRef = 9A73AD38243530E300CC8753 /* SwiftBicycle */; };
-		9AC0C07224391BC000C44A32 /* BicycleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC0C07124391BC000C44A32 /* BicycleExtensions.swift */; };
+		9AC0C075243A5F9300C44A32 /* SwiftBicycle in Frameworks */ = {isa = PBXBuildFile; productRef = 9AC0C074243A5F9300C44A32 /* SwiftBicycle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +25,6 @@
 		9A73AD2924352EEF00CC8753 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9A73AD2C24352EEF00CC8753 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A73AD2E24352EEF00CC8753 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9AC0C07124391BC000C44A32 /* BicycleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BicycleExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,7 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A73AD39243530E300CC8753 /* SwiftBicycle in Frameworks */,
+				9AC0C075243A5F9300C44A32 /* SwiftBicycle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,7 +65,6 @@
 				9A73AD2B24352EEF00CC8753 /* LaunchScreen.storyboard */,
 				9A73AD2E24352EEF00CC8753 /* Info.plist */,
 				9A73AD2824352EEF00CC8753 /* Preview Content */,
-				9AC0C07124391BC000C44A32 /* BicycleExtensions.swift */,
 			);
 			path = SwiftBicycleDemoApp;
 			sourceTree = "<group>";
@@ -97,7 +94,7 @@
 			);
 			name = SwiftBicycleDemoApp;
 			packageProductDependencies = (
-				9A73AD38243530E300CC8753 /* SwiftBicycle */,
+				9AC0C074243A5F9300C44A32 /* SwiftBicycle */,
 			);
 			productName = SwiftBicycleDemoApp;
 			productReference = 9A73AD1D24352EED00CC8753 /* SwiftBicycleDemoApp.app */;
@@ -128,7 +125,7 @@
 			);
 			mainGroup = 9A73AD1424352EED00CC8753;
 			packageReferences = (
-				9A73AD37243530E300CC8753 /* XCRemoteSwiftPackageReference "SwiftBicycle" */,
+				9AC0C073243A5F9300C44A32 /* XCRemoteSwiftPackageReference "SwiftBicycle" */,
 			);
 			productRefGroup = 9A73AD1E24352EED00CC8753 /* Products */;
 			projectDirPath = "";
@@ -158,7 +155,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A73AD2124352EED00CC8753 /* AppDelegate.swift in Sources */,
-				9AC0C07224391BC000C44A32 /* BicycleExtensions.swift in Sources */,
 				9A73AD2324352EED00CC8753 /* SceneDelegate.swift in Sources */,
 				9A73AD2524352EED00CC8753 /* ContentView.swift in Sources */,
 			);
@@ -356,9 +352,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9A73AD37243530E300CC8753 /* XCRemoteSwiftPackageReference "SwiftBicycle" */ = {
+		9AC0C073243A5F9300C44A32 /* XCRemoteSwiftPackageReference "SwiftBicycle" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "file:///Users/lou/project/SwiftBicycle";
+			repositoryURL = "https://github.com/spheresoftinc/SwiftBicycle";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -367,9 +363,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9A73AD38243530E300CC8753 /* SwiftBicycle */ = {
+		9AC0C074243A5F9300C44A32 /* SwiftBicycle */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9A73AD37243530E300CC8753 /* XCRemoteSwiftPackageReference "SwiftBicycle" */;
+			package = 9AC0C073243A5F9300C44A32 /* XCRemoteSwiftPackageReference "SwiftBicycle" */;
 			productName = SwiftBicycle;
 		};
 /* End XCSwiftPackageProductDependency section */

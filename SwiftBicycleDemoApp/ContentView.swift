@@ -8,56 +8,38 @@
 import SwiftUI
 import SwiftBicycle
 
-struct ConverterNetworkState: NetworkState {
+class ConverterNetwork: ObservableObject, BicycleNetworkDelegate {
+    let objectWillChange = ObjectWillChangePublisher()
+
+    let network = BicycleNetwork()
+
     // Fields
-    let feetField = Field<Double>()
-    let inchesField = Field<Double>()
+    var feetField = Field<Double>()
+    var inchesField = Field<Double>()
 
-    // Build the network when you get a reference to one. This network will be
-    // shared wiht all values of ConverterNetworkState copied from the first one.
-    var collection: FieldCollection? {
-        didSet {
-            guard let collection = self.collection else { return }
-            collection.adoptField(field: feetField)
-            collection.adoptField(field: inchesField)
-            let _ = CalculatorInitializer1Op(targetId: inchesField.id, operator1Id: feetField.id) { $0 * 12.0 }
-            let _ = CalculatorInitializer1Op(targetId: feetField.id, operator1Id: inchesField.id) { $0 / 12.0 }
+    init() {
+        network.adoptField(field: feetField)
+        network.adoptField(field: inchesField)
+        Calculator1OpFactory.registerFactory(targetId: inchesField.id, operator1Id: feetField.id) { $0 * 12.0 }
+        Calculator1OpFactory.registerFactory(targetId: feetField.id, operator1Id: inchesField.id) { $0 / 12.0 }
 
-            collection.connectCalculators()
-        }
+        network.delegate = self
+        network.connectCalculators()
     }
 
-    // MARK: UI State
-    // These properties are bindable into SwiftUI directly. The ones that can be changed need
-    // a didSet to send that change to the fields that back them up. If you change anything,
-    // call updateState() to update the other fields, which the UI is bound to.
-
-    var feetText: String = "" {
-        didSet {
-            self.feetField.set(text: feetText, updateState: { self.updateState() })
-        }
+    func networkWillCalculate(_ network: BicycleNetwork) {
+        objectWillChange.send()
     }
-    var feetColor: UIColor = .black
+}
 
-    var inchesText: String = "" {
-        didSet {
-            self.inchesField.set(text: inchesText, updateState: { self.updateState() })
-        }
-    }
-    var inchesColor: UIColor = .black
-
-    mutating func updateState() {
-        (feetText, feetColor) = getTextAndColor(field: feetField)
-        (inchesText, inchesColor) = getTextAndColor(field: inchesField)
+extension TextField {
+    func foregroundColor(code: AnyField.Code) -> some View {
+         return foregroundColor(Color(code == .set ? .blue : .black))
     }
 }
 
 struct ContentView: View {
-    @State var uiState: ConverterNetworkState
-
-    init(fieldCollection: FieldCollection) {
-        self._uiState = ConverterNetworkState.make(collection: fieldCollection)
-    }
+    @ObservedObject var network: ConverterNetwork
 
     var body: some View {
         VStack {
@@ -65,14 +47,14 @@ struct ContentView: View {
                 .font(.system(.title))
             HStack {
                 Text("Feet")
-                TextField("Feet", text: $uiState.feetText)
-                    .foregroundColor(Color(uiState.feetColor))
+                TextField("Feet", text: $network.feetField.text)
+                    .foregroundColor(code: network.feetField.code)
                 Spacer()
             }
             HStack {
                 Text("Inches")
-                TextField("Inches", text: $uiState.inchesText)
-                    .foregroundColor(Color(uiState.inchesColor))
+                TextField("Inches", text: $network.inchesField.text)
+                    .foregroundColor(code: network.inchesField.code)
                 Spacer()
             }
             Spacer()
@@ -82,6 +64,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(fieldCollection: FieldCollection())
+        ContentView(network: ConverterNetwork())
     }
 }
