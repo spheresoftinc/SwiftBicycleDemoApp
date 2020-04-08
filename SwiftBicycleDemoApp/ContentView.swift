@@ -20,8 +20,8 @@ class ConverterNetwork: ObservableObject, BicycleNetworkDelegate {
     init() {
         network.adoptField(field: feetField)
         network.adoptField(field: inchesField)
-        Calculator1OpFactory.registerFactory(targetId: inchesField.id, operator1Id: feetField.id) { $0 * 12.0 }
-        Calculator1OpFactory.registerFactory(targetId: feetField.id, operator1Id: inchesField.id) { $0 / 12.0 }
+        Calculator1OpFactory.registerFactory(targetId: inchesField.id, operand1Id: feetField.id) { $0 * 12.0 }
+        Calculator1OpFactory.registerFactory(targetId: feetField.id, operand1Id: inchesField.id) { $0 / 12.0 }
 
         network.delegate = self
         network.connectCalculators()
