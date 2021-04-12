@@ -13,7 +13,7 @@
 		9A73AD2724352EEF00CC8753 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A73AD2624352EEF00CC8753 /* Assets.xcassets */; };
 		9A73AD2A24352EEF00CC8753 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A73AD2924352EEF00CC8753 /* Preview Assets.xcassets */; };
 		9A73AD2D24352EEF00CC8753 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A73AD2B24352EEF00CC8753 /* LaunchScreen.storyboard */; };
-		9AC0C075243A5F9300C44A32 /* SwiftBicycle in Frameworks */ = {isa = PBXBuildFile; productRef = 9AC0C074243A5F9300C44A32 /* SwiftBicycle */; };
+		9AA5D00B26246D1100B12F0D /* SwiftBicycle in Frameworks */ = {isa = PBXBuildFile; productRef = 9AA5D00A26246D1100B12F0D /* SwiftBicycle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AC0C075243A5F9300C44A32 /* SwiftBicycle in Frameworks */,
+				9AA5D00B26246D1100B12F0D /* SwiftBicycle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +94,7 @@
 			);
 			name = SwiftBicycleDemoApp;
 			packageProductDependencies = (
-				9AC0C074243A5F9300C44A32 /* SwiftBicycle */,
+				9AA5D00A26246D1100B12F0D /* SwiftBicycle */,
 			);
 			productName = SwiftBicycleDemoApp;
 			productReference = 9A73AD1D24352EED00CC8753 /* SwiftBicycleDemoApp.app */;
@@ -107,7 +107,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "App-o-Mat";
 				TargetAttributes = {
 					9A73AD1C24352EED00CC8753 = {
@@ -125,7 +125,7 @@
 			);
 			mainGroup = 9A73AD1424352EED00CC8753;
 			packageReferences = (
-				9AC0C073243A5F9300C44A32 /* XCRemoteSwiftPackageReference "SwiftBicycle" */,
+				9AA5D00926246D1100B12F0D /* XCRemoteSwiftPackageReference "SwiftBicycle" */,
 			);
 			productRefGroup = 9A73AD1E24352EED00CC8753 /* Products */;
 			projectDirPath = "";
@@ -200,6 +200,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -260,6 +261,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -352,20 +354,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9AC0C073243A5F9300C44A32 /* XCRemoteSwiftPackageReference "SwiftBicycle" */ = {
+		9AA5D00926246D1100B12F0D /* XCRemoteSwiftPackageReference "SwiftBicycle" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/spheresoftinc/SwiftBicycle";
 			requirement = {
-				branch = master;
+				branch = main;
 				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9AC0C074243A5F9300C44A32 /* SwiftBicycle */ = {
+		9AA5D00A26246D1100B12F0D /* SwiftBicycle */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9AC0C073243A5F9300C44A32 /* XCRemoteSwiftPackageReference "SwiftBicycle" */;
+			package = 9AA5D00926246D1100B12F0D /* XCRemoteSwiftPackageReference "SwiftBicycle" */;
 			productName = SwiftBicycle;
 		};
 /* End XCSwiftPackageProductDependency section */
